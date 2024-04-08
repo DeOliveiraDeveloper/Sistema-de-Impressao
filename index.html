@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilha de Impressão</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('fundoimg22.png'); /* Ajuste conforme necessário */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            max-height: 92vh;
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 6px;
+        }
+        select, input[type="text"], input[type="file"], input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px; /* Espaçamento entre os campos */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Garante que padding e border estão incluídos na largura total */
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>ILHA DE IMPRESSÃO</h2>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <label for="graduacao">POST/GRAD:</label>
+            <select id="graduacao" name="post_grad" required>
+                <option value="" disabled selected>Selecione uma opção</option>
+                <option value="Cel">Cel</option>
+                <option value="Ten Cel">Ten Cel</option>
+                <option value="Maj">Maj</option>
+                <option value="Cap">Cap</option>
+                <option value="1 Ten">1º Ten</option>
+                <option value="2 Ten">2º Ten</option>
+                <option value="Asp">Asp</option>
+                <option value="Sub Ten">Sub Ten</option>
+                <option value="1 Sgt">1º Sgt</option>
+                <option value="2 Sgt">2º Sgt</option>
+                <option value="3 Sgt">3º Sgt</option>
+                <option value="Cb">Cb</option>
+                <option value="Sd">Sd</option>
+            </select>
+
+            <label for="nome_guerra">NOME DE GUERRA:</label>
+            <input type="text" id="nome_guerra" name="nome_guerra" required>
+
+            <label for="secao">SEÇÃO/CIA:</label>
+            <select id="secao" name="secao" required>
+                <option value="" disabled selected>Selecione uma opção</option>
+                <option value="CMT">CMT</option>
+                <option value="SCMT">SCMT</option>
+                <option value="S1">1ª Seção</option>
+                <option value="S2">2ª Seção</option>
+                <option value="S3">3ª Seção</option>
+                <option value="S4">4ª Seção</option>
+                <option value="CMT/CCAP">CMT/CCAP</option>
+                <option value="CMT/1 Cia">CMT/1ª Cia</option>
+                <option value="CMT/2 Cia">CMT/2ª CIa</option>
+                <option value="CMT/3 Cia">CMT/3ª Cia</option>
+                <option value="Sgte/CCAP">Sgte/CCAP</option>
+                <option value="Sgte/1Cia">Sgte/1ª Cia</option>
+                <option value="Sgte/2Cia">Sgte/2ª Cia</option>
+                <option value="Sgte/3Cia">Sgte/3ª Cia</option>
+                <option value="Furriel/CCAP">Furriel/CCAP</option>
+                <option value="Furriel/1Cia">Furriel/1Cia</option>
+                <option value="Furriel/2Cia">Furriel/2Cia</option>
+                <option value="Furriel/3Cia">Furriel/3Cia</option>
+                <option value="Res. Arm./CCAP">Res. Arm/CCAP</option>
+                <option value="Res. Arm./1Cia">Res. Arm/1Cia</option>
+                <option value="Res. Arm./2Cia">Res. Arm/2Cia</option>
+                <option value="Res. Arm./3Cia">Res. Arm/3Cia</option>
+                <option value="Spp">Seção de Pagamento</option>
+                <option value="Sfpc">SFPC</option>
+                <option value="RP">Com Soc</option>
+                <option value="Banda">Banda</option>
+                <option value="Almox">Almoxarifado</option>
+                <option value="Fiscal">Fiscalização</option>
+                <option value="Tesouraria">Tesouraria</option>
+                <option value="Justiça">Justiça</option>
+                <option value="Suporte">Suporte</option>
+                <option value="Saude">Saúde</option>
+                <option value="Arquivo">Arquivo</option>
+                <option value="Rancho">Rancho</option>
+                <option value="PMT">PMT</option>
+                <option value="Informática">Informática</option>
+                <option value="Salc">Salc</option>
+                <option value="Força Nacional">Força Nacional</option>
+            </select>
+
+            <label for="folha">COLORIDO/PRETO E BRANCO:</label>
+            <select id="folha" name="folha" required>
+                <option value="" disabled selected>Selecione uma opção</option>
+                <option value="Colorida">Colorida</option>
+                <option value="Preto e branco">Preto e branco</option>
+            </select>
+
+            <label for="frente_verso">FRENTE E VERSO/SÓ FRENTE:</label>
+            <select id="frente_verso" name="frente_verso" required>
+                <option value="" disabled selected>Selecione uma opção</option>
+                <option value="Frente e verso">Frente e verso</option>
+                <option value="Só frente">Só frente</option>
+            </select>
+
+            <label for="qtd">QUANTIDADE DE CÓPIAS:</label>
+            <select id="qtd" name="qtd" required>
+                <option value="">Selecione uma opção</option>
+                <script>
+                    for (let i = 1; i <= 100; i++) {
+                    document.write(`<option value="${i}">${i}</option>`);
+                    }
+                    document.write(`<option value="101">mais de 100</option>`);
+                </script>
+            </select>
+
+            <label for="arquivos">ESCOLHA UM OU MAIS ARQUIVOS: </small></label>
+            <input type="file" id="arquivos" name="arquivos[]" multiple required>
+
+            <input type="submit" value="Enviar Arquivo">
+        </form>
+        <footer>
+            <p style="font-size: 10px;">&copy; Portal de Impressão | Desenvolvedor: CB DE OLIVEIRA</p>
+        </footer>
+    </div>
+</body>
+</html>
